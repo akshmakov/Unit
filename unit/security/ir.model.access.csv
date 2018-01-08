@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_digi_digi,digi.digi,model_digi_digi,,1,0,0,0
+access_unit_unit,unit.unit,model_unit_unit,,1,0,0,0

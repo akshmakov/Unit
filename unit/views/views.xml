@@ -1,0 +1,158 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="unit_view_form">
+      <field name="name">unit list</field>
+      <field name="model">unit.unit</field>
+      <field name="arch" type="xml">
+        <tree>
+	  <field name="name"/>
+	  <field name="pn"/>
+	  <field name="sn"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="event_view_form">
+      <field name="name">event list</field>
+      <field name="model">unit.event</field>
+      <field name="arch" type="xml">
+        <tree>
+	  <field name="location"/>
+	  <field name="unit_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="record_view_form">
+      <field name="name">record list</field>
+      <field name="model">unit.record</field>
+      <field name="arch" type="xml">
+        <tree>
+	  <field name="location"/>
+	  <field name="comment"/>
+	  <field name="unit_id"/>
+	  <field name="event_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="status_view_form">
+      <field name="name">status list</field>
+      <field name="model">unit.unit_status</field>
+      <field name="arch" type="xml">
+        <tree>
+	  <field name="name"/>
+	  <field name="short"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="company_view_form">
+      <field name="name">company list</field>
+      <field name="model">unit.company</field>
+      <field name="arch" type="xml">
+        <tree>
+	  <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="contact_view_form">
+      <field name="name">contact list</field>
+      <field name="model">unit.contact</field>
+      <field name="arch" type="xml">
+        <tree>
+	  <field name="name"/>
+	  <field name="company_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="location_view_form">
+      <field name="name">location list</field>
+      <field name="model">unit.location</field>
+      <field name="arch" type="xml">
+        <tree>
+	  <field name="name"/>
+	  <field name="company_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="unit_action">
+      <field name="name">unit window</field>
+      <field name="res_model">unit.unit</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="event_action">
+      <field name="name">event window</field>
+      <field name="res_model">unit.event</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="record_action">
+      <field name="name">record window</field>
+      <field name="res_model">unit.record</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="status_action">
+      <field name="name">status window</field>
+      <field name="res_model">unit.unit_status</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="company_action">
+      <field name="name">company window</field>
+      <field name="res_model">unit.company</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="contact_action">
+      <field name="name">contact window</field>
+      <field name="res_model">unit.contact</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="location_action">
+      <field name="name">location window</field>
+      <field name="res_model">unit.location</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- Top menu item -->
+    <menuitem name="Unit" id="unit_menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Units" id="unit_menu" parent="unit_menu_root"/>
+    <menuitem name="Events" id="event_menu" parent="unit_menu_root"/>
+    <menuitem name="Records" id="record_menu" parent="unit_menu_root"/>
+    <menuitem name="Meta" id="meta_menu" parent="unit_menu_root"/>
+    <!-- actions -->
+    <menuitem name="Unit List" id="unit_menu_list" parent="unit_menu"
+              action="unit_action"/>
+    <menuitem name="Record List" id="record_menu_list" parent="record_menu"
+              action="record_action"/>
+    <menuitem name="Event List" id="event_menu_list" parent="event_menu"
+              action="event_action"/>
+
+    <menuitem name="Status List" id="status_menu_list" parent="meta_menu"
+              action="status_action"/>
+
+    <menuitem name="Location List" id="location_menu_list" parent="meta_menu"
+              action="location_action"/>
+
+    <menuitem name="Company List" id="company_menu_list" parent="meta_menu"
+              action="company_action"/>
+
+    <menuitem name="Contact List" id="contact_menu_list" parent="meta_menu"
+              action="contact_action"/>
+
+    
+  </data>
+</odoo>

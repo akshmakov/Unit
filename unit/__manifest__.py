@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "digi",
+    'name': "Unit",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
+    'summary': """Field Ops Fleet Tracking""",
     'description': """
-        Long description of module's purpose
+    Fleet Tracking 
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Andrey K. Shmakov",
+    'website': "https://www.github.com/",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
@@ -32,4 +29,6 @@
     'demo': [
         'demo/demo.xml',
     ],
+
+    'application': True,
 }
